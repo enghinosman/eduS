@@ -35,22 +35,30 @@
     .name-container {
       display: inline-flex;
       align-items: center;
-      gap: 12px;
+      gap: 16px;
+      flex-wrap: wrap;
     }
 
-    /* Stilul imaginii tale de lângă nume */
+    /* Dimensiunea imaginii 6-7.jpg lângă nume */
     .interactive-img-inline {
-      height: 50px;
+      height: 90px;
       width: auto;
       cursor: pointer;
-      border-radius: 8px;
+      border-radius: 12px;
       vertical-align: middle;
       transition: transform 0.2s ease, box-shadow 0.2s ease;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
     }
 
     .interactive-img-inline:hover {
-      transform: scale(1.15) rotate(3deg);
+      transform: scale(1.1) rotate(2deg);
+    }
+
+    /* Dimensiune adaptată pentru ecranul de mobil */
+    @media (max-width: 600px) {
+      .interactive-img-inline {
+        height: 70px;
+      }
     }
   </style>
 </head>
@@ -84,8 +92,8 @@
           <span style="font-family: 'Pinyon Script', cursive; font-size: 54px; font-weight: normal; color: #333;">
             Enghin
           </span>
-          <!-- AICI este imaginea ta. Asigură-te că fișierul poza.jpg se află în același folder cu index.html -->
-          <img id="shakeImage" class="interactive-img-inline" src="poza.jpg" alt="Imagine interactivă" title="Apasă pe mine!">
+          <!-- Aici este imaginea ta 6-7.jpg -->
+          <img id="shakeImage" class="interactive-img-inline" src="6-7.jpg" alt="Imagine 6-7" title="Apasă pe mine!">
         </span>
       </h1>
       <h2>Profesor de Educație Socială</h2>
@@ -173,7 +181,7 @@
 <script>
   document.querySelectorAll('.nav-links a').forEach(a => a.addEventListener('click', () => document.querySelector('.nav-links').classList.remove('open')));
 
-  // Scriptul pentru tremur (5 secunde) la apăsarea pe imagine
+  // Scriptul pentru tremurul ecranului la click (5 secunde)
   const img = document.getElementById('shakeImage');
   img.addEventListener('click', function() {
     document.body.classList.add('shake-screen');

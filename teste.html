@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="ro">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Teste Inițiale | Osman Enghin</title>
+  <meta name="description" content="Teste inițiale pentru clasa a V-a, a VI-a, a VII-a și a VIII-a - Educație Socială.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header">
+  <nav class="nav wrap">
+    <a class="brand" href="index.html" aria-label="Acasă">
+      <span class="brand-icon">◉</span>
+      <span><b>Educație Socială</b><small>5–8</small></span>
+    </a>
+    <button class="menu-btn" aria-label="Deschide meniul" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
+    <div class="nav-links">
+      <a href="index.html">Acasă</a>
+      <a href="index.html#despre">Despre mine</a>
+      <a href="index.html#clase">Clasele 5–8</a>
+      <a href="teste.html">Teste inițiale</a>
+      <a href="index.html#resurse">Resurse</a>
+      <a href="index.html#contact">Contact</a>
+    </div>
+  </nav>
+</header>
+
+<main style="padding-top: 40px; padding-bottom: 60px;">
+<section id="teste" class="section wrap">
+  <div class="test-heading">
+    <div>
+      <p class="eyebrow">EVALUARE</p>
+      <h2>Teste inițiale</h2>
+      <p class="lead">
+        Testele inițiale încărcate pe site sunt păstrate în format PDF,
+        pentru a putea fi deschise sau descărcate de elevi.
+      </p>
+    </div>
+    <div class="clipboard">✓<br><small>START</small></div>
+  </div>
+
+  <div class="tests">
+
+    <!-- CLASA A V-A -->
+    <article class="test-card">
+      <span class="test-label">CLASA A V-A</span>
+      <h3>Test inițial – Educație Socială</h3>
+      <p>
+        Competențe de intrare în disciplina Educație socială.
+        Timp de lucru: 45 minute.
+      </p>
+
+      <div class="test-actions">
+        <a class="btn primary" target="_blank" href="teste/test-initial-clasa-a-V-a.pdf">
+          Deschide PDF ↗
+        </a>
+        <a class="text-link" href="teste/test-initial-clasa-a-V-a.pdf" download>
+          Descarcă
+        </a>
+      </div>
+    </article>
+
+
+    <!-- CLASA A VI-A -->
+    <article class="test-card">
+      <span class="test-label">CLASA A VI-A</span>
+      <h3>Test inițial – Educație Socială</h3>
+      <p>
+        Recapitulare: gândire critică și drepturile copilului.
+        Timp de lucru: 45 minute.
+      </p>
+
+      <div class="test-actions">
+        <a class="btn primary" target="_blank" href="teste/test-initial-clasa-a-VI-a.pdf">
+          Deschide PDF ↗
+        </a>
+        <a class="text-link" href="teste/test-initial-clasa-a-VI-a.pdf" download>
+          Descarcă
+        </a>
+      </div>
+    </article>
+
+
+    <!-- CLASA A VII-A -->
+    <article class="test-card">
+      <span class="test-label">CLASA A VII-A</span>
+      <h3>Test inițial – Educație Socială</h3>
+      <p>
+        Test inițial pentru clasa a VII-a.
+        Timp de lucru: 45 minute.
+      </p>
+
+      <div class="test-actions">
+        <a class="btn primary" target="_blank" href="teste/14.09.2026 - test initial 7.pdf">
+          Deschide PDF ↗
+        </a>
+        <a class="text-link" href="teste/14.09.2026 - test initial 7.pdf" download>
+          Descarcă
+        </a>
+      </div>
+    </article>
+
+
+    <!-- CLASA A VIII-A -->
+    <article class="test-card">
+      <span class="test-label">CLASA A VIII-A</span>
+      <h3>Test inițial – Educație Socială</h3>
+      <p>
+        Test inițial pentru clasa a VIII-a.
+        Timp de lucru: 45 minute.
+      </p>
+
+      <div class="test-actions">
+        <a class="btn primary" target="_blank" href="teste/14.09.2026 - test initial 8.pdf">
+          Deschide PDF ↗
+        </a>
+        <a class="text-link" href="teste/14.09.2026 - test initial 8.pdf" download>
+          Descarcă
+        </a>
+      </div>
+    </article>
+
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">© 2026 Osman Enghin • Educație Socială 5–8</div>
+</footer>
+
+<script>
+document.querySelectorAll('.nav-links a').forEach(a => a.addEventListener('click', () => document.querySelector('.nav-links').classList.remove('open')));
+</script>
+</body>
+</html>

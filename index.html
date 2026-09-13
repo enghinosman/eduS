@@ -10,6 +10,49 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap" rel="stylesheet">
+  
+  <style>
+    /* Animația de tremur a ecranului */
+    @keyframes shake {
+      0% { transform: translate(1px, 1px) rotate(0deg); }
+      10% { transform: translate(-2px, -3px) rotate(-1deg); }
+      20% { transform: translate(-4px, 0px) rotate(1deg); }
+      30% { transform: translate(4px, 3px) rotate(0deg); }
+      40% { transform: translate(2px, -2px) rotate(1deg); }
+      50% { transform: translate(-2px, 3px) rotate(-1deg); }
+      60% { transform: translate(-4px, 1px) rotate(0deg); }
+      70% { transform: translate(4px, 2px) rotate(-1deg); }
+      80% { transform: translate(-2px, -2px) rotate(1deg); }
+      90% { transform: translate(2px, 3px) rotate(0deg); }
+      100% { transform: translate(1px, -2px) rotate(-1deg); }
+    }
+
+    body.shake-screen {
+      animation: shake 0.2s infinite;
+    }
+
+    /* Stil pentru containerul numelui și al imaginii */
+    .name-container {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    /* Stil pentru imaginea clicabilă de lângă nume */
+    .interactive-img-inline {
+      width: 55px;
+      height: auto;
+      cursor: pointer;
+      border-radius: 8px;
+      vertical-align: middle;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+
+    .interactive-img-inline:hover {
+      transform: scale(1.15) rotate(3deg);
+    }
+  </style>
 </head>
 <body>
 <header class="site-header">
@@ -37,8 +80,12 @@
       <p class="eyebrow">EDUCAȚIE SOCIALĂ • CLASELE 5–8</p>
       <h1>
         OSMAN<br>
-        <span style="font-family: 'Pinyon Script', cursive; font-size: 54px; font-weight: normal; color: #333;">
-          Enghin
+        <span class="name-container">
+          <span style="font-family: 'Pinyon Script', cursive; font-size: 54px; font-weight: normal; color: #333;">
+            Enghin
+          </span>
+          <!-- Imaginea poziționată direct lângă numele 'Enghin' -->
+          <img id="shakeImage" class="interactive-img-inline" src="https://via.placeholder.com/80x80/2c3e50/ffffff?text=6+7" alt="Imagine Clasa 6 si 7" title="Apasă aici!">
         </span>
       </h1>
       <h2>Profesor de Educație Socială</h2>
@@ -111,7 +158,7 @@
 <section id="contact" class="section wrap contact">
   <p class="eyebrow">CONTACT</p>
   <h2>Hai să păstrăm legătura</h2>
-  <p class="lead"> enghin.36508@gmail.com este adresa mea de mail.Daca ai nelămuriri poți să îmi scrii!</p>
+  <p class="lead">enghin.36508@gmail.com este adresa mea de mail. Daca ai nelămuriri poți să îmi scrii!</p>
   <div class="contact-box">
     <span>✉️</span>
     <div><b>Profesor Osman Enghin</b><small>Educație Socială • Clasele 5–8</small></div>
@@ -124,7 +171,17 @@
 </footer>
 
 <script>
-document.querySelectorAll('.nav-links a').forEach(a => a.addEventListener('click', () => document.querySelector('.nav-links').classList.remove('open')));
+  document.querySelectorAll('.nav-links a').forEach(a => a.addEventListener('click', () => document.querySelector('.nav-links').classList.remove('open')));
+
+  // Când elevul apasă pe imagine, ecranul tremură timp de 5 secunde
+  const img = document.getElementById('shakeImage');
+  img.addEventListener('click', function() {
+    document.body.classList.add('shake-screen');
+
+    setTimeout(() => {
+      document.body.classList.remove('shake-screen');
+    }, 5000);
+  });
 </script>
 </body>
 </html>
